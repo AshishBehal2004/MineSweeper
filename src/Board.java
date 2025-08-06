@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Board {
 
 
@@ -37,6 +39,24 @@ public class Board {
         return "💣";
     }
 
+    public void plantBomb(){
+        Random rn = new Random();
+        int bomb_count = 0;
+        while (bomb_count < 10){
+            int rn_row =  rn.nextInt(rows);
+            int rn_column =  rn.nextInt(column);
+            Cell random_cell = board[rn_row][rn_column];
+            if (random_cell.mine == true){
+                continue;
+            }
+            else {
+                random_cell.mine = true;
+                bomb_count++;
+            }
+
+        }
+
+    }
     public static void main(String[] args) {
         Board gameboard = new Board();
         gameboard.printBoard();

@@ -10,12 +10,8 @@ public class Cell {
         this.adjacent_mines = 0;
     }
 
-    public void plant() {
-
-    }
-
     //representing it as a "." for now
-    public String toString() {
+    public String Cell_reveal() {
         return ".";
     }
 
