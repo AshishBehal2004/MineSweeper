@@ -46,6 +46,15 @@ public class Board {
             int rn_row =  rn.nextInt(rows);
             int rn_column =  rn.nextInt(column);
             Cell random_cell = board[rn_row][rn_column];
+            int randomCell_grid = rn_row * rn_column;
+            if (randomCell_grid < bomb_count){
+                int edge_rnRow = rn.nextInt(randomCell_grid);
+                int edge_rnColumn = rn.nextInt(randomCell_grid);
+                Cell edge_cell = board[edge_rnRow][edge_rnColumn];
+                edge_cell.mine = true;
+
+
+            }
             if (random_cell.mine == true){
                 continue;
             }
@@ -53,6 +62,7 @@ public class Board {
                 random_cell.mine = true;
                 bomb_count++;
             }
+
 
         }
 
