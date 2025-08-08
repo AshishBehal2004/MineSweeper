@@ -49,6 +49,8 @@ public class Board {
             Cell random_cell = board[rn_row][rn_column];
             int randomCell_grid = rn_row * rn_column;
             int boardSize = rows * column;
+
+            //for handling the edge case where the grid is smaller than the number of bombs that need to be planted
             int[] uniqueGridLocation = new int [boardSize];
             for (int i = 0; i < uniqueGridLocation.length; i++){
                 uniqueGridLocation[i] = i;
